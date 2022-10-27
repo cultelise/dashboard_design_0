@@ -1,10 +1,11 @@
 body {
   display: grid;
-  grid-template: repeat(4, minmax(200px, 1fr)) / repeat(5, minmax(100px, 1fr));
-
+  grid-template: repeat(4, minmax(200px, 1fr)) / repeat(6, minmax(100px, 1fr));
+  background-color: azure;
 }
 body * {
   border: 1px solid black;
+  border-radius: 10px;
 }
 
 header {
@@ -15,18 +16,35 @@ header {
 }
 
 img {
+  max-height: 200px;
+}
+
+.logo {
   grid-row: span 2;
+  display: grid;
+  justify-items: center;
 }
 
 label {
   grid-column: span 2;
 } 
 
-input {
+#searchbar {
+  box-sizing: content-box;
   width: 80%;
+  margin-left: 20px;
+  padding: 3px 10px;
 }
+
 
 #sidebar {
   display: grid;
   grid-row: 2 / -1;
+  grid-template-rows: 5fr 2fr;
+}
+
+ul {
+  display: grid;
+  grid-row: repeat(5, 1fr);
+  
 }
