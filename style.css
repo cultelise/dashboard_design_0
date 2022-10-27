@@ -1,0 +1,32 @@
+body {
+  display: grid;
+  grid-template: repeat(4, minmax(200px, 1fr)) / repeat(5, minmax(100px, 1fr));
+
+}
+body * {
+  border: 1px solid black;
+}
+
+header {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: inherit;
+  grid-template-rows: 1fr 3fr;
+}
+
+img {
+  grid-row: span 2;
+}
+
+label {
+  grid-column: span 2;
+} 
+
+input {
+  width: 80%;
+}
+
+#sidebar {
+  display: grid;
+  grid-row: 2 / -1;
+}
