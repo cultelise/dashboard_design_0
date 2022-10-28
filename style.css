@@ -1,7 +1,7 @@
 body {
   display: grid;
-  grid-template: repeat(4, minmax(200px, 1fr)) / repeat(6, minmax(100px, 1fr));
-  background-color: azure;
+  grid-template: repeat(10, 100px) / repeat(6, minmax(150px, 1fr));
+  background-color: rgb(228, 228, 228);
 }
 body * {
   border: 1px solid black;
@@ -11,40 +11,77 @@ body * {
 header {
   display: grid;
   grid-column: 1 / -1;
+  grid-row: 1 / 2;
   grid-template-columns: inherit;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: [doc-top head-top] 1fr [search-bot] 3fr [head-bot];
+  justify-items: space-between;
 }
 
 img {
-  max-height: 200px;
+  height: 100px;
+  justify-self: center;
 }
 
 .logo {
   grid-row: span 2;
   display: grid;
-  justify-items: center;
+  grid-template-columns: 1fr 2fr;
 }
 
 label {
+  display: grid;
   grid-column: span 2;
+  grid-row: 1 span 1;
+  grid-template-columns: 5fr 1fr;
+  gap: 10px;
 } 
+
+.header-top {
+  display: grid;
+  grid-area: 1 / 2 / 2 / -1;
+  grid-template-columns: repeat(5, 150px);
+  justify-content: space-between;
+}
+
+.toplinks {
+  grid-column: 3 / -1;
+  grid-row: 1 / 2;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 #searchbar {
   box-sizing: content-box;
-  width: 80%;
   margin-left: 20px;
   padding: 3px 10px;
+  height: 50px;
 }
 
+.title {
+  grid-area: 2 / 2 / 3 / -1;
+  font-size: 2em;
+}
 
 #sidebar {
   display: grid;
   grid-row: 2 / -1;
-  grid-template-rows: 5fr 2fr;
+  grid-template-rows: inherit;
+}
+
+.dash {
+  font-size: 2em;
 }
 
 ul {
   display: grid;
-  grid-row: repeat(5, 1fr);
-  
+  grid-row: 2 / -2;
+}
+
+main {
+  display: grid;
+  grid-area: 2 / 2 / -1 / -1;
+  grid-template-columns: 5fr 1fr;
+}
+
+.projects {
+  grid-row: span 2;
 }
