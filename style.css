@@ -1,4 +1,5 @@
 body {
+  font-family: 'Montserrat', sans-serif;
   display: grid;
   grid-template: repeat(10, 100px) / repeat(auto-fit, minmax(100px, 1fr));
   background-color: hsl(0, 0%, 90%);
@@ -125,6 +126,7 @@ main > :nth-child(3) {
 }
 
 .card {
+  font-size: 20px;
   background-color: white;
   border: 2px solid hsl(0, 0%, 60%);;
   border-radius: 5px;
